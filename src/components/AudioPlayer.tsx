@@ -9,7 +9,7 @@ import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
 //Make default lower volume for better UX
 const DEFAULT_VOLUME = 65;
 //Progress color for input range sliders
-const PROGRESS_COLOR = '#32a852'
+const PROGRESS_COLOR = '#588364'
 
 export default function AudioPlayer({title, src} : {title: string, src: string}) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -112,19 +112,20 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
         Your browser does not support the audio element.
       </audio>
 
-      <div className={'flex flex-row h-fit'}>
-        <div className={'flex flex-col'}>
+      <div className={'flex flex-row h-fit w-full'}>
+        <div className={'flex flex-col w-full'}>
           { /* Player title + controls */ }
           <div className={'flex flex-row justify-between'}>
-            <p>{title}</p>
+            <p className={'font-bold'}>{title}</p>
             <div className={'cursor-pointer w-fit hover:text-gray-400'}>
-              <a href={src} download>
+              <a href={src} download title='Download'>
                 <FileDownloadIcon fontSize={'large'}/>
               </a>
             </div>
           </div>
-          <div className={'flex flex-row items-center'}>
+          <div className={'flex flex-row items-center w-full'}>
             <div className={'cursor-pointer w-fit hover:text-gray-400'}>
+              { /* TODO: Perhaps add a loading icon in addition (for when the audio's source is still loading?) */}
               {isPlaying ?
                 <PauseCircleFilledIcon onClick={() => togglePlay()} fontSize={'large'}/> :
                 <PlayCircleFilledIcon onClick={() => togglePlay()} fontSize={'large'}/>
@@ -135,14 +136,14 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
             </div>
             
           </div>
-          <div className={'flex flex-row justify-between items-center space-x-6'}>
-            <div className={'flex flex-row space-x-2'}>
+          <div className={'flex flex-row justify-between items-center space-x-6 w-full'}>
+            <div className={'flex flex-row space-x-2 w-1/4'}>
               <span>{currentTime}</span>
               <span>/</span>
               <span>{duration}</span>
             </div>
             { /* Volume slider */}
-            <div className={'flex flex-row h-fit space-x-2 items-center'}>
+            <div className={'flex flex-row h-fit space-x-2 items-center w-auto'}>
               <div className={'flex cursor-pointer w-fit hover:text-gray-400'}>
                 {volume > 0 ?
                   <VolumeUpIcon onClick={toggleMute} fontSize={'medium'}/> :

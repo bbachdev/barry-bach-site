@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "type": "Microphone",
+    "name": "Neumann U87 Ai",
+    "icon": ""
+  },
+  {
+    "id": 2,
+    "type": "Preamp",
+    "name": "Avalon VT-737sp",
+    "icon": ""
+  },
+  {
+    "id": 3,
+    "type": "Interface",
+    "name": "RME Babyface Pro FS",
+    "icon": ""
+  },
+  {
+    "id": 4,
+    "type": "DAW",
+    "name": "Presonus Studio One",
+    "icon": ""
+  },
+  {
+    "id": 5,
+    "type": "Recording Space",
+    "name": "Studiobricks One Plus - VO Edition",
+    "icon": ""
+  },
+  {
+    "id": 6,
+    "type": "Internet",
+    "name": "Wired Connection - 1 Gbps down / 45 mbps up",
+    "icon": ""
+  }
+]
