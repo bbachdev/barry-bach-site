@@ -8,6 +8,8 @@ import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
 
 //Make default lower volume for better UX
 const DEFAULT_VOLUME = 65;
+//Progress color for input range sliders
+const PROGRESS_COLOR = '#32a852'
 
 export default function AudioPlayer({title, src} : {title: string, src: string}) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -24,6 +26,9 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
     if (audioRef.current && progressRef.current) {
       audioRef.current.volume = volume / 100;
       setDuration(`${Math.floor(audioRef.current.duration / 60)}:${Math.floor(audioRef.current.duration % 60)}`);
+      if(volumeRef.current) {
+        volumeRef.current.style.background = `linear-gradient(to right, ${PROGRESS_COLOR} ${DEFAULT_VOLUME}%, #ccc ${DEFAULT_VOLUME}%)`;
+      }
 
       //Update progress bar as audio plays
       audioRef.current.addEventListener('timeupdate', () => {
@@ -32,6 +37,7 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
           const { currentTime, duration } = audioRef.current;
           const progressPercent = (currentTime / duration) * 100;
           progressRef.current.value = progressPercent.toString();
+          progressRef.current.style.background = `linear-gradient(to right, ${PROGRESS_COLOR} ${progressRef.current.value}%, #ccc ${progressRef.current.value}%)`;
           //Update time strings
           setCurrentTime(`${Math.floor(currentTime / 60)}:${String(Math.floor(currentTime % 60)).padStart(2, '0')}`);
         }
@@ -88,6 +94,14 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
       if(!volumeRef.current) return;
       volumeRef.current.value = '0';
     }
+    volumeRef.current.style.background = `linear-gradient(to right, ${PROGRESS_COLOR} ${volumeRef.current.value}%, #ccc ${volumeRef.current.value}%)`;
+  }
+
+  const updateProgress = (ref : React.RefObject<HTMLInputElement>) => {
+    if(ref.current) {
+      const sliderValue = Number(ref.current.value);
+      ref.current.style.background = `linear-gradient(to right, ${PROGRESS_COLOR} ${sliderValue}%, #ccc ${sliderValue}%)`;
+    }
   }
 
   return (
@@ -116,8 +130,8 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
                 <PlayCircleFilledIcon onClick={() => togglePlay()} fontSize={'large'}/>
               }
             </div>
-            <div className={'ml-2 w-full'}>
-              <input className={'w-full'} ref={progressRef} type="range" defaultValue={0} onChange={(e) => seek(e)}/>
+            <div className={'ml-2 w-full flex'}>
+              <input className={'w-full'} ref={progressRef} type="range" defaultValue={0} onChange={(e) => seek(e)} onInput={() => updateProgress(progressRef)}/>
             </div>
             
           </div>
@@ -129,13 +143,15 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
             </div>
             { /* Volume slider */}
             <div className={'flex flex-row h-fit space-x-2 items-center'}>
-              <div className={'cursor-pointer w-fit hover:text-gray-400'}>
+              <div className={'flex cursor-pointer w-fit hover:text-gray-400'}>
                 {volume > 0 ?
                   <VolumeUpIcon onClick={toggleMute} fontSize={'medium'}/> :
                   <VolumeMuteIcon onClick={toggleMute} fontSize={'medium'}/>
                 }
               </div>
-              <input ref={volumeRef} className={'w-full'} type="range" defaultValue={volume} min={0} max={100} step={1} onChange={(e) => changeVolume(Number(e.target.value))}/>
+              <div className={'w-full flex'}>
+                <input ref={volumeRef} type="range" defaultValue={volume} min={0} max={100} step={1} onChange={(e) => changeVolume(Number(e.target.value))} onInput={() => updateProgress(volumeRef)}/>
+              </div>
             </div>
           </div>
         </div>
