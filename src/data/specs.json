@@ -34,5 +34,11 @@
     "type": "Internet",
     "name": "Wired Connection - 1 Gbps down / 45 mbps up",
     "icon": ""
+  },
+  {
+    "id": 7,
+    "type": "Communication",
+    "name": "Source-Connect Standard, Discord, Zoom",
+    "icon": ""
   }
 ]

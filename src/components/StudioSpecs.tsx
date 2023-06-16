@@ -12,9 +12,9 @@ export default function StudioSpecs() {
   const [specList, setSpecList] = useState<Spec[]>(SpecList)
 
   return (
-    <>
+    <div className={'flex flex-col w-full mb-10'}>
       <h2 className={'text-center text-4xl mt-8 mb-6'}>Home Studio</h2>
-      <div>
+      <div className={'mx-auto'}>
         {specList.map((spec) => (
           <div key={spec.id} className={'flex flex-row space-x-2'}>
             {/* <img src={spec.icon} alt={spec.name} className={'w-6 h-6'}/> */}
@@ -22,6 +22,6 @@ export default function StudioSpecs() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }
