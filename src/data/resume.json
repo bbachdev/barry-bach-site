@@ -1,0 +1,62 @@
+{
+  "credits": [
+    {
+      "categoryId": "1",
+      "categoryName": "Singing (Recording)",
+      "items": [
+        {
+          "itemId": "1",
+          "project": "NDA",
+          "year": "2023",
+          "role": "-",
+          "client": "-"
+        },
+        {
+          "itemId": "2",
+          "project": "Fire Emblem Engage",
+          "year": "2023",
+          "role": "\"Emblem, Engage!\" (Opening Theme)",
+          "client": "Nintendo",
+          "url": "https://www.nintendo.com/store/products/fire-emblem-engage-switch/"
+        },
+        {
+          "itemId": "3",
+          "project": "Commission",
+          "year": "2022",
+          "role": "\"Good To Be Me\"",
+          "client": "Blixemi",
+          "url": "https://www.youtube.com/watch?v=8qsA5SgdpHk"
+        },
+        {
+          "itemId": "4",
+          "project": "Member (Tenor)", 
+          "year": "2019 - 2020",
+          "role": "\"Greedy\", \"In the Name of Love\", \"All of Me\", \"Livin' on a Prayer (Soloist)\"",
+          "client": "Due North",
+          "url": "https://open.spotify.com/artist/7u8NVVVIks753OYIOWFdDM?si=uc8gFDibTQ2O2kRgFB8iBQ"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "categoryId": "1",
+      "categoryName": "Animation & Games",
+      "items": [
+        {
+          "itemId": "1",
+          "name": "",
+          "year": "",
+          "instructor": "",
+          "studio": ""
+        }
+      ]
+    }
+  ],
+  "additional": [
+    {
+      "header": "Vocal Range",
+      "details": "<b>Voice Type: </b>Tenor<br/><b>Range:</b> B2 - D5<br/><b>Range (Falsetto):</b> Eb3 - C#6<br/><b>Passaggio/Breaks:</b> E4/F4 (1<sup>st</sup>), Bb4/B4 (2<sup>nd</sup>)"
+    }
+  ]
+}

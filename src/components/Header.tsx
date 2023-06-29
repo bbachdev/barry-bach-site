@@ -30,7 +30,7 @@ export default function Header() {
           <MenuIcon fontSize={'large'}/>
         )}
       </div>
-      <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:hidden flex-col bg-[#242424] space-y-4 absolute py-2 top-20 right-0 w-full h-fit z-20`}>
+      <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:hidden flex-col bg-[#242424] space-y-4 absolute py-2 top-20 right-0 w-full h-fit z-20 transition-all`}>
         <ul className={'flex flex-col space-y-8 items-center text-2xl'}>
           <li>
             <a href={'#'} onClick={toggleMenu}>Demos</a>
@@ -42,7 +42,7 @@ export default function Header() {
             <a href={'#studio'} onClick={toggleMenu}>Studio</a>
           </li>
           <li>
-            <a href={'#studio'} onClick={toggleMenu}>Resume</a>
+            <a href={'#resume'} onClick={toggleMenu}>Resume</a>
           </li>
         </ul>
         <ul className={'flex flex-row space-x-5 items-center mx-auto py-4'}>
@@ -71,7 +71,7 @@ export default function Header() {
             <a href={'#studio'}>Studio</a>
           </li>
           <li>
-            <a href={'#studio'}>Resume</a>
+            <a href={'#resume'}>Resume</a>
           </li>
         </ul>
       </div>
