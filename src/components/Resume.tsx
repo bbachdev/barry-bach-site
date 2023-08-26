@@ -122,7 +122,7 @@ export default function Resume() {
       {/* Mobile View (List) */}
       <div id="resumeSection" className={'flex flex-col md:hidden pb-10 w-4/5 mx-auto'}>
         <div className={'flex flex-row items-center relative'}>
-          <h2 className={'text-4xl mt-8 mb-6 mx-auto'}>Resume</h2>
+          <h2 className={'text-4xl mt-8 mb-4 mx-auto'}>Resume</h2>
           {/* TODO: Add download button */}
           {/* <a className={'cursor-pointer mt-4 absolute right-0'} onClick={downloadResume} download title='Download'>
             <FileDownloadIcon fontSize={'large'}/>
