@@ -40,7 +40,7 @@ function App() {
           </p>
         </div>
         <a id="studio"></a>
-        <div id="specsSection" className={'flex flex-col md:flex-row bg-[#f4efda] text-slate-700'}>
+        <div id="specsSection" className={'flex flex-col md:flex-row bg-[#e1e0da] text-slate-700'}>
           <StudioSpecs />
           <img className={'object-cover md:w-3/5'} src={StudioImage} alt='Image of home studio'/>
         </div>

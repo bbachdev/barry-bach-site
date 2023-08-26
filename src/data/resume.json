@@ -41,14 +41,49 @@
   "education": [
     {
       "categoryId": "1",
-      "categoryName": "Animation & Games",
+      "categoryName": "Voiceover",
       "items": [
         {
           "itemId": "1",
-          "name": "",
-          "year": "",
-          "instructor": "",
-          "studio": ""
+          "name": "Animation, Anime, and Games",
+          "instructor": "Ivy Isenberg, Wendee Lee, Brittany Lauda",
+          "studio": "ACE Studios"
+        },
+        {
+          "itemId": "2",
+          "name": "Commercial",
+          "instructor": "Craig Lee Thomas",
+          "studio": "Real Voice LA"
+        },
+        {
+          "itemId": "3",
+          "name": "Animation and Games",
+          "instructor": "Cassandra Lee Morris",
+          "studio": "Self-Hosted Workshops"
+        },
+        {
+          "itemId": "4",
+          "name": "Animation, Games, and Commercial",
+          "instructor": "Chris Hackney, Tania Possick, Joe Hernandez, Greg Chun, Katelyn Gault, Christian La Monte, Brenna Larsen, Jesse Inocalla, Patrick Seitz",
+          "studio": "Sound On Studio"
+        },
+        {
+          "itemId": "5",
+          "name": "Animation, Games, and Commercial",
+          "instructor": "Amber Lee Connors, Marissa Lenti, Paula Tiso, Mami Okada",
+          "studio": "Strawberry Hill Studio"
+        }
+      ]
+    },
+    {
+      "categoryId": "2",
+      "categoryName": "Singing",
+      "items": [
+        {
+          "itemId": "1",
+          "name": "Private Lessons",
+          "instructor": "Dr. Mark Mowry",
+          "studio": "University of Wisconsin - Eau Claire"
         }
       ]
     }
@@ -56,7 +91,7 @@
   "additional": [
     {
       "header": "Vocal Range",
-      "details": "<b>Voice Type: </b>Tenor<br/><b>Range:</b> B2 - D5<br/><b>Range (Falsetto):</b> Eb3 - C#6<br/><b>Passaggio/Breaks:</b> E4/F4 (1<sup>st</sup>), Bb4/B4 (2<sup>nd</sup>)"
+      "details": "<b>Voice Type: </b>Tenor<br/><b>Range:</b> Bb2 - D5<br/><b>Range (Falsetto):</b> E3 - C#6<br/><b>Passaggio/Breaks:</b> E4/F4 (1<sup>st</sup>), Bb4/B4 (2<sup>nd</sup>)"
     }
   ]
 }
