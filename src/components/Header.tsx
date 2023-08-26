@@ -85,6 +85,9 @@ export default function Header() {
             <a href={'https://twitter.com/barry_bach'} target={'_blank'}><TwitterIcon fontSize={'large'}/></a>
           </li>
           <li>
+            <a href={'https://bsky.app/profile/barrybach.com'} target={'_blank'} onClick={toggleMenu}><AlternateEmailIcon fontSize={'large'}/></a>
+          </li>
+          <li>
             <a href={'https://www.youtube.com/channel/UC2_ONiCusUKZ85yqGMNKgJg'} target={'_blank'}><YouTubeIcon fontSize={'large'}/></a>
           </li>
           <li>
