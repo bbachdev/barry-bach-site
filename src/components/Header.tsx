@@ -1,4 +1,5 @@
 import EmailIcon from '@mui/icons-material/Email';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
@@ -48,6 +49,9 @@ export default function Header() {
         <ul className={'flex flex-row space-x-5 items-center mx-auto py-4'}>
           <li>
             <a href={'https://twitter.com/barry_bach'} target={'_blank'} onClick={toggleMenu}><TwitterIcon fontSize={'large'}/></a>
+          </li>
+          <li>
+            <a href={'https://bsky.app/profile/barrybach.com'} target={'_blank'} onClick={toggleMenu}><AlternateEmailIcon fontSize={'large'}/></a>
           </li>
           <li>
             <a href={'https://www.youtube.com/channel/UC2_ONiCusUKZ85yqGMNKgJg'} target={'_blank'} onClick={toggleMenu}><YouTubeIcon fontSize={'large'}/></a>
