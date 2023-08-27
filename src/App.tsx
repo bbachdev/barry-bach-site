@@ -1,7 +1,8 @@
 import AudioPlayer from './components/AudioPlayer'
 import SiteLayout from './layouts/SiteLayout'
 
-import SingingDemo from './assets/media/barryBachSingingDemo.mp3'
+import SingingDemo from './assets/media/BarryBach_SingingDemo.mp3'
+import StudioSample from './assets/media/BarryBach_RawHomeStudioSample.mp3'
 import StudioSpecs from './components/StudioSpecs'
 
 import Headshot from './assets/images/headshot1.jpg'
@@ -18,7 +19,7 @@ function App() {
       <div className={'flex flex-col'}>
         <div id="introSection" className={'flex flex-col md:flex-row bg-neutral-600'}>
           <img src={Headshot} alt="Barry Bach headshot" className={'w-full md:w-3/5 object-cover'}/>
-          <div className={'flex flex-col w-full md:w-1/2 items-center'}>
+          <div className={'flex flex-col grow w-full md:w-1/2 items-center'}>
             <div className={'flex flex-col w-full md:w-3/5 mt-8'}>
               <img src={Logo} alt="Barry Bach logo text" className={'w-3/5 mx-auto md:w-full'}/>
               <span className={'font-light text-center text-lg mt-4'}>Singer | Voice Actor</span>
@@ -26,8 +27,11 @@ function App() {
             
             <div className={'flex flex-col mt-4 md:mt-8 mb-8 lg:mb-8 space-y-6'}>
               <AudioPlayer title='Singing Demo' src={SingingDemo}/>
-              <AudioPlayer title='Character Demo' src={SingingDemo}/>
-              <AudioPlayer title='Home Studio Sample' src={SingingDemo}/>
+              {/* TODO: Remove once Character Demo is ready */}
+              <div></div>
+              <div></div>
+              {/* <AudioPlayer title='Character Demo' src={SingingDemo}/> */}
+              <AudioPlayer title='Home Studio Sample' src={StudioSample}/>
             </div>
           </div>
         </div>
