@@ -5,6 +5,7 @@ import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
+import { CircularProgress } from '@mui/material';
 
 //Make default lower volume for better UX
 const DEFAULT_VOLUME = 65;
@@ -12,6 +13,7 @@ const DEFAULT_VOLUME = 65;
 const PROGRESS_COLOR = '#588364'
 
 export default function AudioPlayer({title, src} : {title: string, src: string}) {
+  const [hasLoaded, setHasLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState('0:00');
   const [duration, setDuration] = useState('0:00');
@@ -23,6 +25,7 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
   const volumeRef = useRef<HTMLInputElement>(null);
 
   const onLoadedMetadata = () => {
+    setHasLoaded(true);
     if (audioRef.current && progressRef.current) {
       audioRef.current.volume = volume / 100;
       setDuration(`${Math.floor(audioRef.current.duration / 60)}:${Math.floor(audioRef.current.duration % 60)}`);
@@ -113,7 +116,7 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
       </audio>
 
       <div className={'flex flex-row h-fit w-full'}>
-        <div className={'flex flex-col w-full'}>
+        <div className={'flex flex-col w-full min-w-full'}>
           { /* Player title + controls */ }
           <div className={'flex flex-row justify-between'}>
             <p className={'font-bold'}>{title}</p>
@@ -126,24 +129,29 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
           <div className={'flex flex-row items-center w-full'}>
             <div className={'cursor-pointer w-fit hover:text-gray-400'}>
               { /* TODO: Perhaps add a loading icon in addition (for when the audio's source is still loading?) */}
-              {isPlaying ?
-                <PauseCircleFilledIcon onClick={() => togglePlay()} fontSize={'large'}/> :
-                <PlayCircleFilledIcon onClick={() => togglePlay()} fontSize={'large'}/>
-              }
+              {hasLoaded ? <>
+                {isPlaying ?
+                  <PauseCircleFilledIcon onClick={() => togglePlay()} fontSize={'large'}/> :
+                  <PlayCircleFilledIcon onClick={() => togglePlay()} fontSize={'large'}/>
+                }
+              </> : <>
+                {/* Loading Icon */}
+                <CircularProgress size={`2rem`}/>
+              </>}
             </div>
             <div className={'ml-2 w-full flex'}>
               <input className={'w-full'} ref={progressRef} type="range" defaultValue={0} onChange={(e) => seek(e)} onInput={() => updateProgress(progressRef)}/>
             </div>
             
           </div>
-          <div className={'flex flex-row justify-between items-center space-x-6 w-full'}>
-            <div className={'flex flex-row space-x-2 w-1/4'}>
+          <div className={'flex flex-row justify-between items-center space-x-6 w-full min-w-full'}>
+            <div className={'flex flex-row space-x-2 min-w-1/4 w-1/4'}>
               <span>{currentTime}</span>
               <span>/</span>
               <span>{duration}</span>
             </div>
             { /* Volume slider */}
-            <div className={'flex flex-row h-fit space-x-2 items-center w-auto'}>
+            <div className={'flex flex-row h-fit space-x-2 items-center w-3/4'}>
               <div className={'flex cursor-pointer w-fit hover:text-gray-400'}>
                 {volume > 0 ?
                   <VolumeUpIcon onClick={toggleMute} fontSize={'medium'}/> :

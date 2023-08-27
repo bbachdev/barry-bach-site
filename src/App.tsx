@@ -24,7 +24,7 @@ function App() {
               <span className={'font-light text-center text-lg mt-4'}>Singer | Voice Actor</span>
             </div>
             
-            <div className={'flex flex-col mt-4 md:mt-8 mb-8 lg:mb-8 space-y-6'}>
+            <div className={'flex flex-col mt-4 md:mt-8 mb-8 lg:mb-8 space-y-6 md:w-2/3'}>
               <AudioPlayer title='Singing Demo' src={SingingDemo}/>
               {/* TODO: Remove once Character Demo is ready */}
               <div></div>
