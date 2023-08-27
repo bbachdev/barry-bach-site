@@ -16,7 +16,7 @@ export default function Header() {
   }
 
   return (
-    <header className={'max-w-7xl max-h-48 md:h-24 mx-auto px-4 py-2 flex flex-row text-md items-center'}>
+    <header className={'max-w-7xl max-h-20 md:max-h-24 md:h-24 mx-auto px-4 py-2 flex flex-row text-md items-center'}>
       { /* TODO - add logo when scrolling past NameLogo on top section */}
       {/* <img alt={'Barry Bach logo text'} className={'h-20'} src={NameLogo} /> */}
 
