@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
@@ -12,7 +12,7 @@ const DEFAULT_VOLUME = 65;
 //Progress color for input range sliders
 const PROGRESS_COLOR = '#588364'
 
-export default function AudioPlayer({title, src} : {title: string, src: string}) {
+export default function AudioPlayer({index, title, src, playOverride, onPlay} : {index: number, title: string, src: string, playOverride: boolean, onPlay: (index: number) => void}) {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState('0:00');
@@ -23,6 +23,20 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
   const audioRef = useRef<HTMLAudioElement>(null);
   const progressRef = useRef<HTMLInputElement>(null);
   const volumeRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if(!audioRef.current) return;
+    if(playOverride === true) {
+      audioRef.current.play();
+    }
+    else {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+  
+  }, [playOverride, isPlaying])
+  
+
 
   const onLoadedMetadata = () => {
     setHasLoaded(true);
@@ -58,7 +72,13 @@ export default function AudioPlayer({title, src} : {title: string, src: string})
   }
 
   const togglePlay = () => {
-    (isPlaying) ? audioRef.current?.pause() : audioRef.current?.play();
+    if(isPlaying){
+      onPlay(-1)
+      audioRef.current?.pause()
+    }else{
+      onPlay(index);
+      audioRef.current?.play()
+    }
     setIsPlaying(!isPlaying);
   }
 

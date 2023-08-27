@@ -10,8 +10,15 @@ import Logo from './assets/images/NameLogo.png'
 import StudioImage from './assets/images/studio.jpg'
 import Resume from './components/Resume'
 
+import { useState } from 'react'
+
 function App() {
   const currentYear = new Date().getFullYear()
+  const [currentAudioIndex, setCurrentAudioIndex] = useState(-1)
+
+  const handlePlay = (index : number) => {
+    setCurrentAudioIndex(index)
+  }
 
   return (
     <SiteLayout>
@@ -25,12 +32,12 @@ function App() {
             </div>
             
             <div className={'flex flex-col mt-4 md:mt-8 mb-8 lg:mb-8 space-y-6 md:w-2/3'}>
-              <AudioPlayer title='Singing Demo' src={SingingDemo}/>
+              <AudioPlayer index={0} title='Singing Demo' src={SingingDemo} playOverride={currentAudioIndex === 0} onPlay={handlePlay}/>
               {/* TODO: Remove once Character Demo is ready */}
               <div></div>
               <div></div>
               {/* <AudioPlayer title='Character Demo' src={SingingDemo}/> */}
-              <AudioPlayer title='Home Studio Sample' src={StudioSample}/>
+              <AudioPlayer index={2} title='Home Studio Sample' src={StudioSample} playOverride={currentAudioIndex === 2} onPlay={handlePlay}/>
             </div>
           </div>
         </div>
