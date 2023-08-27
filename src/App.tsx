@@ -22,7 +22,6 @@ function App() {
 
   return (
     <SiteLayout>
-      <a id="demos"></a>
       <div className={'flex flex-col'}>
         <div id="introSection" className={'flex flex-col md:flex-row bg-neutral-600'}>
           <img src={Headshot} alt="Barry Bach headshot" className={'w-full md:w-3/5 object-cover'}/>
@@ -30,6 +29,7 @@ function App() {
             <div className={'flex flex-col w-full md:w-3/5 mt-8'}>
               <img src={Logo} alt="Barry Bach logo text" className={'w-3/5 mx-auto md:w-full'}/>
               <span className={'font-light text-center text-lg mt-4'}>Singer | Voice Actor</span>
+              <a id="demos"></a>
             </div>
             
             <div className={'flex flex-col mt-4 md:mt-8 mb-8 lg:mb-8 space-y-6 md:w-2/3'}>
