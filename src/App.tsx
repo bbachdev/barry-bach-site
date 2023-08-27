@@ -8,7 +8,6 @@ import StudioSpecs from './components/StudioSpecs'
 import Headshot from './assets/images/headshot1.jpg'
 import Logo from './assets/images/NameLogo.png'
 import StudioImage from './assets/images/studio.jpg'
-import { useState } from 'react'
 import Resume from './components/Resume'
 
 function App() {
