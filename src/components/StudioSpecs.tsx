@@ -9,7 +9,7 @@ interface Spec {
 }
 
 export default function StudioSpecs() {
-  const [specList, setSpecList] = useState<Spec[]>(SpecList)
+  const [specList] = useState<Spec[]>(SpecList)
 
   return (
     <div className={'flex flex-col w-full mb-10'}>

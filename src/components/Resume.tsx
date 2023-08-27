@@ -1,5 +1,4 @@
 import ResumeData from '../data/resume.json'
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
 interface Resume {
   credits:    Credits[];
@@ -43,9 +42,9 @@ interface EducationItem {
 export default function Resume() {
   const resume : Resume = ResumeData
 
-  const downloadResume = () => {
-    console.log('download resume')
-  }
+  // const downloadResume = () => {
+  //   console.log('download resume')
+  // }
 
   return (
     <>
