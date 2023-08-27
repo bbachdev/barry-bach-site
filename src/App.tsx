@@ -1,8 +1,8 @@
 import AudioPlayer from './components/AudioPlayer'
 import SiteLayout from './layouts/SiteLayout'
 
-import SingingDemo from './assets/media/BarryBach_SingingDemo.mp3'
-import StudioSample from './assets/media/BarryBach_RawHomeStudioSample.mp3'
+import SingingDemo from '/BarryBach_SingingDemo.mp3'
+import StudioSample from '/BarryBach_RawHomeStudioSample.mp3'
 import StudioSpecs from './components/StudioSpecs'
 
 import Headshot from './assets/images/headshot1.jpg'
@@ -22,6 +22,7 @@ function App() {
 
   return (
     <SiteLayout>
+      <a id="demos"></a>
       <div className={'flex flex-col'}>
         <div id="introSection" className={'flex flex-col md:flex-row bg-neutral-600'}>
           <img src={Headshot} alt="Barry Bach headshot" className={'w-full md:w-3/5 object-cover'}/>

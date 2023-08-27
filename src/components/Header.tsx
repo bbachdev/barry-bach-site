@@ -33,7 +33,7 @@ export default function Header() {
       <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:hidden flex-col bg-[#242424] space-y-4 absolute py-2 top-20 right-0 w-full h-fit z-20 transition-all`}>
         <ul className={'flex flex-col space-y-8 items-center text-2xl'}>
           <li>
-            <a href={'#'} onClick={toggleMenu}>Demos</a>
+            <a href={'#demos'} onClick={toggleMenu}>Demos</a>
           </li>
           <li>
             <a href={'#about'} onClick={toggleMenu}>About</a>
