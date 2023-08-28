@@ -47,6 +47,16 @@ export default function AudioPlayer({index, title, src, playOverride, onPlay} : 
         volumeRef.current.style.background = `linear-gradient(to right, ${PROGRESS_COLOR} ${DEFAULT_VOLUME}%, #ccc ${DEFAULT_VOLUME}%)`;
       }
 
+      //Set to not playing once audio ends
+      audioRef.current.addEventListener('ended', () => {
+        setIsPlaying(false);
+        onPlay(-1)
+        if(progressRef.current){
+          progressRef.current.value = '0';
+          progressRef.current.style.background = `linear-gradient(to right, ${PROGRESS_COLOR} ${progressRef.current.value}%, #ccc ${progressRef.current.value}%)`;
+        }
+      });
+
       //Update progress bar as audio plays
       audioRef.current.addEventListener('timeupdate', () => {
         if (audioRef.current && progressRef.current) {
