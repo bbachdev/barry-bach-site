@@ -12,7 +12,7 @@ This project was creating a static marketing + portfolio page, which is currentl
 
 ## AudioPlayer
 One of my main goals in developing this project was creating an HTML audio player that combined all features that I typically see missing from similar voice artist pages, namely:
-- Styling that is consistent across all browsers (vs. typical <audio> styling)
+- Styling that is consistent across all browsers (vs. typical audio tag styling)
 - Volume adjustment + mute functionality
 - Awareness of other audio sources (and pausing when not the "active" audio)
 - Ability for user to download audio, regardless of browser/device
