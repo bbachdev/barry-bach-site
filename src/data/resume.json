@@ -6,10 +6,10 @@
       "items": [
         {
           "itemId": "1",
-          "project": "NDA",
+          "project": "The Witch and the Bull",
           "year": "2023",
-          "role": "-",
-          "client": "-"
+          "role": "\"Tan's Song\"",
+          "client": "Moonsia (w/ Ele Soundtracks)"
         },
         {
           "itemId": "2",
@@ -46,7 +46,7 @@
         {
           "itemId": "1",
           "name": "Animation, Anime, and Games",
-          "instructor": "Ivy Isenberg, Wendee Lee, Brittany Lauda",
+          "instructor": "Ivy Isenberg, Brittany Lauda",
           "studio": "ACE Studios"
         },
         {
