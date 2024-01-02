@@ -174,11 +174,11 @@ export default function AudioPlayer({index, title, src, playOverride, onPlay} : 
             </div>
             
           </div>
-          <div className={'flex flex-row justify-between items-center space-x-6 w-full min-w-full'}>
-            <div className={'flex flex-row space-x-2 min-w-1/4 w-1/4'}>
-              <span>{currentTime}</span>
-              <span>/</span>
-              <span>{duration}</span>
+          <div className={'flex flex-row justify-between items-center space-x-4 w-full min-w-full'}>
+            <div className={'flex flex-row w-[25%] text-center'}>
+              <span className={`min-w-5/12 w-5/12`}>{currentTime}</span>
+              <span className={`min-w-2/12 w-2/12 text-center`}>/</span>
+              <span className={`min-w-5/12 w-5/12`}>{duration}</span>
             </div>
             { /* Volume slider */}
             <div className={'flex flex-row h-fit space-x-2 items-center w-3/4'}>
