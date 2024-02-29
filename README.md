@@ -1,10 +1,12 @@
 # barry-bach-site
 
+![Top-half Screenshot](sample.png)
+
 ## Summary
 This project was creating a static marketing + portfolio page, which is currently accessible at https://barrybach.com .
 
 ## Tech Stack
-![Icons for TypeScript](https://skillicons.dev/icons?i=ts,react,vite,tailwind)
+![Tech Stack](https://skillicons.dev/icons?i=ts,react,vite,tailwind)
 
 - **React + TypeScript** - While this project primarily hosts static information, there are some interactive portions of the site (namely, the "AudioPlayer" component). React, through *useState* and reusable components, made creation of these more dynamic sections very simple.
 - **Vite** - Due to the lack of need for more complex features that frameworks like Next provides, and the desire to have a static site for easy + cheap uploading, I opted to use Vite for this particular project.
