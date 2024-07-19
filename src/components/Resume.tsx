@@ -20,7 +20,6 @@ interface Credits {
 interface CreditsItem {
   itemId: string;
   project: string;
-  year: string;
   role: string;
   client: string;
   url?: string;
