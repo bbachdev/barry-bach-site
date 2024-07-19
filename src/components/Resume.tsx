@@ -65,7 +65,6 @@ export default function Resume() {
               <thead>
                 <tr>
                   <th className={'text-left w-1/4 pb-4 px-4'}>Project</th>
-                  <th className={'text-left pb-4 px-4'}>Year</th>
                   <th className={'text-left w-1/2 pb-4 px-4'}>Song(s)</th>
                   <th className={'text-left pb-4 px-4'}>Client</th>
                 </tr>
