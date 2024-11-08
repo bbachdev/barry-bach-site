@@ -46,9 +46,6 @@ export default function Header() {
         </ul>
         <ul className={'flex flex-row space-x-5 items-center mx-auto py-4'}>
           <li>
-            <a href={'https://twitter.com/barry_bach'} target={'_blank'} onClick={toggleMenu}><TwitterIcon fontSize={'large'}/></a>
-          </li>
-          <li>
             <a href={'https://bsky.app/profile/barrybach.com'} target={'_blank'} onClick={toggleMenu}>
               <svg width="27" height="27" viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M254.896 184.158C252.81 183.926 250.733 183.645 248.671 183.315C250.773 183.574 252.849 183.855 254.896 184.158Z" fill="white"/>
@@ -84,9 +81,6 @@ export default function Header() {
       </div>
       <div className={'ml-8 hidden md:flex flex-row items-center'}>
           <ul className={'flex flex-row space-x-5'}>
-          <li>
-            <a href={'https://twitter.com/barry_bach'} target={'_blank'}><TwitterIcon fontSize={'large'}/></a>
-          </li>
           <li className={`flex items-center`}>
             <a href={'https://bsky.app/profile/barrybach.com'} target={'_blank'} onClick={toggleMenu}>
             <svg width="27" height="27" viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg">
