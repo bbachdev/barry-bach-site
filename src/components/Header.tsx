@@ -1,5 +1,4 @@
 import EmailIcon from '@mui/icons-material/Email';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
 import MenuIcon from '@mui/icons-material/Menu';
