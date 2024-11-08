@@ -6,31 +6,33 @@
       "items": [
         {
           "itemId": "1",
+          "project": "NDA",
+          "role": "NDA",
+          "client": ""
+        },
+        {
+          "itemId": "2",
           "project": "The Witch and the Bull",
-          "year": "2023",
           "role": "\"Tan's Song\"",
           "client": "Moonsia (w/ Ele Soundtracks)"
         },
         {
-          "itemId": "2",
+          "itemId": "3",
           "project": "Fire Emblem Engage",
-          "year": "2023",
           "role": "\"Emblem, Engage!\" (Opening Theme)",
           "client": "Nintendo",
           "url": "https://www.nintendo.com/store/products/fire-emblem-engage-switch/"
         },
         {
-          "itemId": "3",
+          "itemId": "4",
           "project": "Commission",
-          "year": "2022",
           "role": "\"Good To Be Me\"",
           "client": "Blixemi",
           "url": "https://www.youtube.com/watch?v=8qsA5SgdpHk"
         },
         {
-          "itemId": "4",
-          "project": "Member (Tenor)", 
-          "year": "2019 - 2020",
+          "itemId": "5",
+          "project": "Member (Tenor)",
           "role": "\"Greedy\", \"In the Name of Love\", \"All of Me\", \"Livin' on a Prayer (Soloist)\"",
           "client": "Due North",
           "url": "https://open.spotify.com/artist/7u8NVVVIks753OYIOWFdDM?si=uc8gFDibTQ2O2kRgFB8iBQ"

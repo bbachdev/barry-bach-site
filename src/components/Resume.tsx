@@ -1,46 +1,45 @@
 import ResumeData from '../data/resume.json'
 
 interface Resume {
-  credits:    Credits[];
-  education:  Education[];
+  credits: Credits[];
+  education: Education[];
   additional: Additional[];
 }
 
 interface Additional {
-  header:  string;
+  header: string;
   details: string;
 }
 
 interface Credits {
-  categoryId:   string;
+  categoryId: string;
   categoryName: string;
-  items:        CreditsItem[];
+  items: CreditsItem[];
 }
 
 interface CreditsItem {
-  itemId:  string;
+  itemId: string;
   project: string;
-  year:    string;
-  role:    string;
-  client:  string;
-  url?:    string;
+  role: string;
+  client: string;
+  url?: string;
 }
 
 interface Education {
-  categoryId:   string;
+  categoryId: string;
   categoryName: string;
-  items:        EducationItem[];
+  items: EducationItem[];
 }
 
 interface EducationItem {
-  itemId:     string;
-  name:       string;
+  itemId: string;
+  name: string;
   instructor: string;
-  studio:     string;
+  studio: string;
 }
 
 export default function Resume() {
-  const resume : Resume = ResumeData
+  const resume: Resume = ResumeData
 
   // const downloadResume = () => {
   //   console.log('download resume')
@@ -59,23 +58,21 @@ export default function Resume() {
         </div>
         {/* TODO: For mobile, potentially have each row be "Role" bolded as main, and then newline with the other fields? */}
         <div className={'text-3xl mb-6 text-gray-400'}>Credits</div>
-        {resume.credits.map((credit : Credits) => (
+        {resume.credits.map((credit: Credits) => (
           <div key={credit.categoryId}>
             <h4 className={'text-lg mb-6 text-gray-400'}>{credit.categoryName}</h4>
             <table className={'table-auto w-full'}>
               <thead>
                 <tr>
                   <th className={'text-left w-1/4 pb-4 px-4'}>Project</th>
-                  <th className={'text-left pb-4 px-4'}>Year</th>
-                  <th className={'text-left w-1/2 pb-4 px-4'}>Project(s)</th>
+                  <th className={'text-left w-1/2 pb-4 px-4'}>Song(s)</th>
                   <th className={'text-left pb-4 px-4'}>Client</th>
                 </tr>
               </thead>
               <tbody>
-                {credit.items.map((item : CreditsItem) => (
+                {credit.items.map((item: CreditsItem) => (
                   <tr key={item.itemId} className={`odd:bg-[#525252]`}>
                     <td className={'text-xl pt-4 pb-4 px-4'}>{item.project}</td>
-                    <td className={'text-lg pt-4 pb-4 px-4'}>{item.year}</td>
                     <td className={'text-lg italic pr-4 pt-4 pb-4 px-4'}>{item.role}</td>
                     <td className={'text-lg pt-4 pb-4 px-4'}>{item.client}</td>
                   </tr>
@@ -86,7 +83,7 @@ export default function Resume() {
         ))}
         <hr className={`my-6`}></hr>
         <div className={'text-3xl mb-2 text-gray-400'}>Education & Training</div>
-        {resume.education.map((education : Education) => (
+        {resume.education.map((education: Education) => (
           <div key={education.categoryId}>
             <h4 className={'text-lg mb-6 text-gray-400 mt-4'}>{education.categoryName}</h4>
             <table className={'table-auto w-full'}>
@@ -98,7 +95,7 @@ export default function Resume() {
                 </tr>
               </thead>
               <tbody>
-                {education.items.map((item : EducationItem) => (
+                {education.items.map((item: EducationItem) => (
                   <tr key={item.itemId} className={`odd:bg-[#525252]`}>
                     <td className={'text-xl pt-4 pb-4 px-4'}>{item.studio}</td>
                     <td className={'text-lg pt-4 pb-4 px-4'}>{item.name}</td>
@@ -111,10 +108,10 @@ export default function Resume() {
         ))}
         <hr className={`my-10`}></hr>
         <div className={'text-3xl mb-6 text-gray-400'}>Additional Info</div>
-        {resume.additional.map((additional : Additional) => (
+        {resume.additional.map((additional: Additional) => (
           <div key={additional.header} className={'flex flex-col space-y-2'}>
             <h4 className={'text-lg mb-2 text-gray-400'}>{additional.header}</h4>
-            <p className={'text-lg'} dangerouslySetInnerHTML={{__html: additional.details}}></p>
+            <p className={'text-lg'} dangerouslySetInnerHTML={{ __html: additional.details }}></p>
           </div>
         ))}
       </div>
@@ -128,20 +125,19 @@ export default function Resume() {
           </a> */}
         </div>
         <div className={'text-3xl mb-6 text-gray-400'}>Credits</div>
-        {resume.credits.map((credit : Credits) => (
+        {resume.credits.map((credit: Credits) => (
           <div key={credit.categoryId}>
             <h4 className={'text-md mb-6 text-gray-400'}>{credit.categoryName}</h4>
             <div className={'flex flex-col space-y-4'}>
-              {credit.items.map((item : CreditsItem) => (
+              {credit.items.map((item: CreditsItem) => (
                 <div key={item.itemId}>
                   <p>
                     <span className={'text-lg font-bold'}>- {item.project}</span>
-                    <span className={'text-lg'}> ({item.year})</span>
-                    <br/>
+                    <br />
                     {item.role !== '-' && (
                       <>
                         <span className={'text-lg italic'}>{item.role}</span>
-                        <br/>
+                        <br />
                         <span className={'text-md'}>{item.client}</span>
                       </>
                     )}
@@ -153,18 +149,18 @@ export default function Resume() {
         ))}
         <hr className={`my-6`}></hr>
         <div className={'text-3xl mb-2 text-gray-400'}>Education & Training</div>
-        {resume.education.map((education : Education) => (
+        {resume.education.map((education: Education) => (
           <>
             <div key={education.categoryId}>
               <h4 className={'text-md mb-6 text-gray-400 mt-4'}>{education.categoryName}</h4>
               <div className={'flex flex-col space-y-4'}>
-                {education.items.map((item : EducationItem) => (
+                {education.items.map((item: EducationItem) => (
                   <div key={item.itemId}>
                     <p className={`mb-4`}>
                       <span className={'text-lg font-bold'}>- {item.studio}</span>
-                      <br/>
+                      <br />
                       <span className={'text-sm italic'}>{item.name}</span>
-                      <br/>
+                      <br />
                       <span className={'text-md'}>{item.instructor}</span>
                     </p>
                   </div>
@@ -175,10 +171,10 @@ export default function Resume() {
         ))}
         <hr className={`my-6`}></hr>
         <div className={'text-3xl mb-6 text-gray-400'}>Additional Info</div>
-        {resume.additional.map((additional : Additional) => (
+        {resume.additional.map((additional: Additional) => (
           <div key={additional.header} className={'flex flex-col space-y-2'}>
             <h4 className={'text-md mb-2 text-gray-400'}>{additional.header}</h4>
-            <p className={'text-md'} dangerouslySetInnerHTML={{__html: additional.details}}></p>
+            <p className={'text-md'} dangerouslySetInnerHTML={{ __html: additional.details }}></p>
           </div>
         ))}
       </div>
